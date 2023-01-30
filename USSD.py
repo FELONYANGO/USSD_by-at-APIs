@@ -13,19 +13,21 @@ def ussd_callback():
 
 
     if text=='':
-        response="CON what would you want to check\n"
-        response +="1.your account_number\n"
-        response += "2.your phone_number\n"
+        response="CON welcome to farmersLine\n"
+        response +="1.Enquire about crop\n"
+        response += "2.Know more\n"
 
 
     elif text=='1':
-        response="CON what would you like to check\n"
-        response += "1.your account_number\n"
-        response += "your account_balance\n"
+        
+        response = "CON 1.Name your crop\n"
+        response += "0.Back\n"
+        response += "00.Home\n"
 
     elif text == '1*1':
-        account_number =" SVCV73HDBH72"
-        response="END your account_number is " +account_number
+        response = "CON 1.Name your area of crop location\n"
+        response += "0.Back\n"
+        response += "00.Home\n"
 
     elif text == '1*2':
         account_balance ="7,405,423,618"
@@ -36,4 +38,8 @@ def ussd_callback():
 
     return response
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=os.environ.get('PORT'))
+    app.run(host="0.0.0.0", port='3000')
+
+
+def connect():
+    
